@@ -1,57 +1,3 @@
-# import face_recognition as fc
-# import cv2
-# import numpy as np
-
-# video_capture = cv2.VideoCapture(0)
-
-# my_face = fc.load_image_file("WIN_20230208Pro8.jpg")
-# my_face_encoding = fc.face_encodings(my_face)[0]
-
-# known_face_encodings = [
-#     my_face_encoding
-# ]
-
-# known_face_names = [
-#     "Sayak Pal"
-# ]
-
-# face_locations = []
-# face_encodings =[]
-# face_names = []
-# process_this_frame = True
-
-# while True:
-#     ret, frame = video_capture.read()
-
-#     if process_this_frame:
-#         small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25)
-#         rgb_small_frame = small_frame[:, :, ::-1]
-
-#         face_locations = fc.face_locations(rgb_small_frame)
-#         face_encodings=fc.face_encodings(rgb_small_frame, face_locations)
-#         face_names = []
-#         for face_encoding in face_encodings:
-#             matches = fc.compare_faces(known_face_encodings, face_encoding)
-#             name = "unknown"
-#             if True in matches:
-#                 first_match_index = matches.index(True)
-#                 name = known_face_names[first_match_index]
-#             face_names.append(name)
-#     process_this_frame = not process_this_frame
-
-#     for (x, y, w, h),name in zip(face_locations, face_names):
-#         x *= 4
-#         y *= 4
-#         w *= 4
-#         h *= 4
-#         cv2.rectangle(frame, (x, y), (w, h), (255, 0, 0), 2)
-#     cv2.imshow('video', frame)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-# # Release handle to the webcam
-# video_capture.release()
-# cv2.destroyAllWindows()
-
 import face_recognition
 import cv2
 import numpy as np
@@ -70,21 +16,21 @@ import winsound
 video_capture = cv2.VideoCapture(0)
 
 # Load a sample picture and learn how to recognize it.
-Sayak_image = face_recognition.load_image_file("WIN_20230208Pro8.jpg")
-Sayak_face_encoding = face_recognition.face_encodings(Sayak_image)[0]
+Obama_image = face_recognition.load_image_file("obama.jpeg")
+Obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-Sagar_image = face_recognition.load_image_file("WhatsApp Image 2023-02-08 at 8.33.46 PM.jpeg")
-Sagar_face_encoding = face_recognition.face_encodings(Sagar_image)[0]
+Putin_image = face_recognition.load_image_file("Putin.jpeg")
+Putin_face_encoding = face_recognition.face_encodings(Putin_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    Sayak_face_encoding,
-    Sagar_face_encoding
+    Obama_face_encoding,
+    Putin_face_encoding
 ]
 known_face_names = [
-    "Sayak Pal",
-    "Sagar Pal"
+    "Obama",
+    "Putin"
 ]
 
 # Initialize some variables
