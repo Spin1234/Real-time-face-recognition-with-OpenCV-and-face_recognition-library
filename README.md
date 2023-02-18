@@ -29,3 +29,7 @@ This code uses face_recognition and OpenCV libraries to recognize faces in a liv
 10. The program displays the resulting frame with face detections in real-time.
 11. The program continues until the user presses the "q" key to quit.
 12. The program releases the video capture object and destroys all windows created by OpenCV.
+
+# Output:
+
+![App Screenshot](Screenshot.png)
