@@ -30,6 +30,10 @@ This code uses face_recognition and OpenCV libraries to recognize faces in a liv
 11. The program continues until the user presses the "q" key to quit.
 12. The program releases the video capture object and destroys all windows created by OpenCV.
 
+# Note: 
+
+Here I have trained the AI model with the images of Putin and Obama. It will consider another faces as unknown except Putin and obama.
+
 # Output:
 
-![App Screenshot](Screenshot.png)
+![App Screenshot](Screenshot.png)  ![App Screenshot](Screenshot110.png)
